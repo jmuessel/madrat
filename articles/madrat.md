@@ -14,6 +14,7 @@ for the first time you will be asked for a folder to use and store that
 setting permanently (if allowed by the user).
 
 ``` r
+
 library(madrat)
 cfg <- getConfig()
 #> Initialize madrat config with default settings..
@@ -60,6 +61,7 @@ folder the script is run from. An example for such a function is
 `madrat:::downloadTau`.
 
 ``` r
+
 madrat:::downloadTau
 #> function (subtype = "paper") 
 #> {
@@ -101,7 +103,7 @@ madrat:::downloadTau
 #>             volume = "232", pages = "109-118", url = "https://doi.org/10.1016/j.ecolmodel.2012.03.002", 
 #>             doi = "10.1016/j.ecolmodel.2012.03.002")))
 #> }
-#> <bytecode: 0x5603d37e3db8>
+#> <bytecode: 0x5559206ca9e0>
 #> <environment: namespace:madrat>
 ```
 
@@ -112,6 +114,7 @@ source or calculation type as argument. To run downloadTau through the
 wrapper, one has to use the following call:
 
 ``` r
+
 downloadSource("Tau", overwrite = TRUE)
 ```
 
@@ -134,6 +137,7 @@ and the content of the magclass object should be completely identical to
 the downloaded data.
 
 ``` r
+
 madrat:::readTau
 #> function (subtype = "paper") 
 #> {
@@ -143,7 +147,7 @@ madrat:::readTau
 #>     x[x == -999] <- NA
 #>     return(x)
 #> }
-#> <bytecode: 0x5603d75d4c88>
+#> <bytecode: 0x55591f1c6c08>
 #> <environment: namespace:madrat>
 ```
 
@@ -151,6 +155,7 @@ If one wishes to only read in data (without conversion), this can be
 done by running `readSource` with the argument `convert = FALSE`:
 
 ``` r
+
 x <- readSource("Tau", "paper", convert = FALSE)
 ```
 
@@ -187,6 +192,7 @@ up calculations. Support tools such as `toolCountryFill` help to
 interpolate the missing information:
 
 ``` r
+
 madrat:::convertTau
 #> function (x) 
 #> {
@@ -207,13 +213,14 @@ madrat:::convertTau
 #>     xref <- toolCountryFill(xref, fill = 0, verbosity = 2)
 #>     return(mbind(tau, xref))
 #> }
-#> <bytecode: 0x5603d7a11ab8>
+#> <bytecode: 0x55592211f218>
 #> <environment: namespace:madrat>
 ```
 
 Read and convert can be run together by running `readSource`:
 
 ``` r
+
 x <- readSource("Tau", "paper")
 ```
 
@@ -245,6 +252,7 @@ In the given example the data source “Tau” is used to calculate a data
 output called “TauTotal”.
 
 ``` r
+
 madrat:::calcTauTotal
 #> function (source = "paper") 
 #> {
@@ -266,7 +274,7 @@ madrat:::calcTauTotal
 #>             pages = "109-118", url = "https://doi.org/10.1016/j.ecolmodel.2012.03.002", 
 #>             doi = "10.1016/j.ecolmodel.2012.03.002")))
 #> }
-#> <bytecode: 0x5603d8707e70>
+#> <bytecode: 0x5559226cf1b0>
 #> <environment: namespace:madrat>
 ```
 
@@ -285,6 +293,7 @@ and/or allowed list entries can be found in the help to `calcOutput`
 An output calculation can be run with the wrapper function `calcOutput`:
 
 ``` r
+
 x <- calcOutput("TauTotal")
 ```
 
@@ -303,6 +312,7 @@ user defined functions matching to the wrapper `retrieveData` start with
 `full` in the name:
 
 ``` r
+
 madrat:::fullEXAMPLE
 #> function (rev = 0, dev = "", extra = "Example argument") 
 #> {
@@ -316,7 +326,7 @@ madrat:::fullEXAMPLE
 #>     }
 #>     return(list(tag = "customizable_tag", pucTag = "tag"))
 #> }
-#> <bytecode: 0x5603d98f1e18>
+#> <bytecode: 0x555923b5eb30>
 #> <environment: namespace:madrat>
 ```
 
@@ -326,6 +336,7 @@ requested revision of the data. In the given example the calculation
 “TauTotal” is only performed for revisions greater or equal 1.
 
 ``` r
+
 retrieveData("example", rev = 1)
 ```
 
@@ -354,6 +365,7 @@ They can be made visible to madrat by setting the option
 `globalenv = TRUE`. The following example shows how that can look like.
 
 ``` r
+
 library(madrat)
 
 # add global environment to madrat search path
@@ -393,6 +405,7 @@ In addition the following lines of code should be added as `madrat.R` to
 the R folder of the package.
 
 ``` r
+
 .onAttach <- function(libname, pkgname) {
   madrat::madratAttach(pkgname)
 }

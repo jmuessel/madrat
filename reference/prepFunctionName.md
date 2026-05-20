@@ -47,6 +47,7 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 print(madrat:::prepFunctionName("Tau", "read"))
 #> [1] "madrat:::readTau(subtype=subtype)"
 #> attr(,"formals")
@@ -54,7 +55,7 @@ print(madrat:::prepFunctionName("Tau", "read"))
 #> attr(,"package")
 #> [1] "madrat"
 #> attr(,"pkgcomment")
-#> [1] "madrat 3.35.0"
+#> [1] "madrat 3.36.2"
 print(madrat:::prepFunctionName("TauTotal", "calc"))
 #> [1] "madrat:::calcTauTotal(...)"
 #> attr(,"formals")
@@ -62,7 +63,7 @@ print(madrat:::prepFunctionName("TauTotal", "calc"))
 #> attr(,"package")
 #> [1] "madrat"
 #> attr(,"pkgcomment")
-#> [1] "madrat 3.35.0"
+#> [1] "madrat 3.36.2"
 print(madrat:::prepFunctionName("EXAMPLE", "full"))
 #> [1] "madrat:::fullEXAMPLE(rev=rev, dev=dev, ...)"
 #> attr(,"formals")
@@ -70,5 +71,5 @@ print(madrat:::prepFunctionName("EXAMPLE", "full"))
 #> attr(,"package")
 #> [1] "madrat"
 #> attr(,"pkgcomment")
-#> [1] "madrat 3.35.0"
+#> [1] "madrat 3.36.2"
 ```

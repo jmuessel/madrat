@@ -41,6 +41,7 @@ Jan Philipp Dietrich, Pascal Sauer
 ## Examples
 
 ``` r
+
 innerFunction <- function() {
   startinfo <- madrat:::toolstartmessage("innerFunction(argumentsToPrint = 123)", "+")
   vcat(1, "inner")

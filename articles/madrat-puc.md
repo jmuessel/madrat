@@ -35,6 +35,7 @@ By default a PUC is created automatically when a data processing is
 launched:
 
 ``` r
+
 library(madrat, quietly = TRUE)
 retrieveData("EXAMPLE", rev = 42, puc = TRUE, extra = "Extra Argument")
 ```
@@ -96,6 +97,7 @@ should be included in a puc-file can be controlled by the return value
 of a calc-function:
 
 ``` r
+
 calcExample <- function() {
   return(list(x = data,
               putInPUC = FALSE))
@@ -114,6 +116,7 @@ aggregating the puc-file. This can be controlled via control flags in
 the full-function:
 
 ``` r
+
 fullEXAMPLE <- function(rev = 0, dev = "", extra = "Example argument") {
 
   "!# @pucArguments extra"

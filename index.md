@@ -1,6 +1,6 @@
 # May All Data be Reproducible and Transparent (MADRaT) \*
 
-R package **madrat**, version **3.35.0**
+R package **madrat**, version **3.36.2**
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/madrat)](https://cran.r-project.org/package=madrat)
@@ -26,6 +26,7 @@ For installation of the most recent package version an additional
 repository has to be added in R:
 
 ``` r
+
 options(repos = c(CRAN = "@CRAN@", pik = "https://rse.pik-potsdam.de/r/packages"))
 ```
 
@@ -37,6 +38,7 @@ After that the most recent version of the package can be installed using
 `install.packages`:
 
 ``` r
+
 install.packages("madrat")
 ```
 
@@ -44,6 +46,7 @@ Package updates can be installed using `update.packages` (make sure that
 the additional repository has been added before running that command):
 
 ``` r
+
 update.packages()
 ```
 
@@ -54,6 +57,7 @@ the package and how to use it. You can load them with the following
 command (the package needs to be installed):
 
 ``` r
+
 vignette("madrat-caching") # Data caching in madrat
 vignette("madrat-puc")     # Portable unagreggated collections (PUCs) in MADRaT
 vignette("madrat")         # Data preparation with madrat
@@ -72,7 +76,7 @@ Dietrich J, Sauer P, Baumstark L, Wirth S, Giannousakis A, Rodrigues R,
 Bodirsky B, Leip D, Crawford M, Kreidenweis U, Klein D, Rein P (2026).
 “madrat: May All Data be Reproducible and Transparent (MADRaT) \*.”
 <doi:10.5281/zenodo.1115490> <https://doi.org/10.5281/zenodo.1115490>,
-Version: 3.35.0, <https://github.com/pik-piam/madrat>.
+Version: 3.36.2, <https://github.com/pik-piam/madrat>.
 
 A BibTeX entry for LaTeX users is
 
@@ -81,9 +85,9 @@ A BibTeX entry for LaTeX users is
  title = {madrat: May All Data be Reproducible and Transparent (MADRaT) *},
  author = {Jan Philipp Dietrich and Pascal Sauer and Lavinia Baumstark and Stephen Wirth and Anastasis Giannousakis and Renato Rodrigues and Benjamin Leon Bodirsky and Debbora Leip and Michael Crawford and Ulrich Kreidenweis and David Klein and Patrick Rein},
  doi = {10.5281/zenodo.1115490},
- date = {2026-03-09},
+ date = {2026-03-30},
  year = {2026},
  url = {https://github.com/pik-piam/madrat},
- note = {Version: 3.35.0},
+ note = {Version: 3.36.2},
 }
 ```

@@ -78,6 +78,13 @@ to first fill up the list of countries to the official ISO code country
 list, and then fill values with the regional average (see
 callToolCountryFill Option).
 
+## See also
+
+Other country tools: [`getISOlist()`](getISOlist.md),
+[`toolCountry2isocode()`](toolCountry2isocode.md),
+[`toolCountryFill()`](toolCountryFill.md),
+[`toolISOhistorical()`](toolISOhistorical.md)
+
 ## Author
 
 Bjoern Soergel, Lavinia Baumstark, Jan Philipp Dietrich
@@ -85,6 +92,7 @@ Bjoern Soergel, Lavinia Baumstark, Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 x <- magclass::new.magpie(cells_and_regions = c("A", "B", "C", "D"), years = c(2000, 2005),
   fill = c(1, NA, 3, 4, 5, 6, NA, 8))
 rel <- data.frame(CountryCode = c("A", "B", "C", "D"), RegionCode = c("R1", "R1", "R1", "R2"))

@@ -32,6 +32,10 @@ toolSplitSubtype(subtype, components, sep = ":")
 
 A named list with the different entities of the given subtype
 
+## See also
+
+Other subtype handling: [`toolSubtypeSelect()`](toolSubtypeSelect.md)
+
 ## Author
 
 Jan Philipp Dietrich
@@ -39,8 +43,8 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
-toolSplitSubtype("mymodel:myversion:myworld", list(model=c("mymodel","notmymodel"), 
-                                                   version=c("myversion","42"), 
+toolSplitSubtype("mymodel:myversion:myworld", list(model=c("mymodel","notmymodel"),
+                                                   version=c("myversion","42"),
                                                    world="myworld"))
 #> $model
 #> [1] "mymodel"

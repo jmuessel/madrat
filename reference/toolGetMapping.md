@@ -62,6 +62,9 @@ the mapping as a data frame
 [`calcOutput`](calcOutput.md),
 [`toolConvertMapping`](toolConvertMapping.md)
 
+Other mapping: [`addMapping()`](addMapping.md),
+[`toolConvertMapping()`](toolConvertMapping.md)
+
 ## Author
 
 Jan Philipp Dietrich
@@ -69,6 +72,7 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 head(toolGetMapping("regionmappingH12.csv", where = "madrat"))
 #>               X CountryCode RegionCode
 #> 1         Aruba         ABW        LAM

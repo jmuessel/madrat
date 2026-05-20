@@ -12,6 +12,7 @@ computations and stores it in the cachefolder. Where this folder is
 located can be checked via
 
 ``` r
+
 library(madrat, quietly = TRUE)
 #> 
 #> Attaching package: 'magclass'
@@ -19,7 +20,7 @@ library(madrat, quietly = TRUE)
 #> 
 #>     pmax, pmin
 getConfig("cachefolder", verbose = FALSE)
-#> [1] "/tmp/Rtmpgn2aey/madrat/cache/default"
+#> [1] "/tmp/Rtmp2zUdRn/madrat/cache/default"
 ```
 
 When running data processing via `retrieveData` it currently offers two
@@ -50,6 +51,7 @@ The fingerprint is created by looking at the dependency graph of a
 function which can be retrieved via `getDependencies`:
 
 ``` r
+
 getDependencies("calcTauTotal", packages = "madrat")
 #>                        func type package
 #> 1                   readTau read  madrat
@@ -66,15 +68,15 @@ getDependencies("calcTauTotal", packages = "madrat")
 #> 12           toolMapFromRel tool  madrat
 #>                                 call     hash
 #> 1                   madrat:::readTau 51d42a7b
-#> 2         madrat:::toolSubtypeSelect 86ae28b2
+#> 2         madrat:::toolSubtypeSelect 19a011f1
 #> 3             madrat:::toolAggregate d87bab1e
 #> 4           madrat:::toolCountryFill f02cc82a
 #> 5  madrat:::toolGetAggregationMatrix d29738b5
 #> 6     madrat:::toolAggregateWeighted bb30f581
-#> 7   madrat:::toolAggregateUnweighted 79c0341a
+#> 7   madrat:::toolAggregateUnweighted 255c73b9
 #> 8            madrat:::toolGetMapping b688b718
 #> 9            madrat:::toolZeroWeight fd922370
-#> 10            madrat:::toolExpandRel 6ade03e3
+#> 10            madrat:::toolExpandRel 86691784
 #> 11            madrat:::toolFixWeight 0deba207
 #> 12           madrat:::toolMapFromRel 37c2d9ee
 ```
@@ -88,27 +90,28 @@ them to one single hash which is the fingerprint of that specific
 function:
 
 ``` r
+
 setConfig(verbosity = 3)
 #> Global configuration update:
 #>   verbosity: 1 -> 3
 fp <- madrat:::fingerprint("calcTauTotal")
-#> hash components (8cdfa51c):
+#> hash components (f3399049):
 #>   49fe8440 | madrat:::calcTauTotal | madrat:::calcTauTotal
 #>   51d42a7b | madrat:::readTau | madrat:::readTau
 #>   c095ab28 | madrat:::sysdata$iso_cell | madrat:::sysdata$iso_cell
 #>   d87bab1e | madrat:::toolAggregate | madrat:::toolAggregate
-#>   79c0341a | madrat:::toolAggregateUnweighted | 
+#>   255c73b9 | madrat:::toolAggregateUnweighted | 
 #> madrat:::toolAggregateUnweighted
 #>   bb30f581 | madrat:::toolAggregateWeighted | 
 #> madrat:::toolAggregateWeighted
 #>   f02cc82a | madrat:::toolCountryFill | madrat:::toolCountryFill
-#>   6ade03e3 | madrat:::toolExpandRel | madrat:::toolExpandRel
+#>   86691784 | madrat:::toolExpandRel | madrat:::toolExpandRel
 #>   0deba207 | madrat:::toolFixWeight | madrat:::toolFixWeight
 #>   d29738b5 | madrat:::toolGetAggregationMatrix | 
 #> madrat:::toolGetAggregationMatrix
 #>   b688b718 | madrat:::toolGetMapping | madrat:::toolGetMapping
 #>   37c2d9ee | madrat:::toolMapFromRel | madrat:::toolMapFromRel
-#>   86ae28b2 | madrat:::toolSubtypeSelect | madrat:::toolSubtypeSelect
+#>   19a011f1 | madrat:::toolSubtypeSelect | madrat:::toolSubtypeSelect
 #>   fd922370 | madrat:::toolZeroWeight | madrat:::toolZeroWeight
 #>   3dd304aa | magclass:::ncells | magclass:::ncells
 ```
@@ -159,6 +162,7 @@ the fingerprinting. Control flags are comments in the functions which
 are put in quotes and start with `!#`. They can look like:
 
 ``` r
+
 "!# @monitor madrat:::sysdata magclass:::ncells"
 "!# @ignore  madrat:::toolAggregate"
 ```
@@ -187,6 +191,7 @@ doing.
 ## Examples
 
 ``` r
+
 setConfig(globalenv = TRUE)
 #> Global configuration update:
 #>   globalenv: FALSE -> TRUE
@@ -208,6 +213,7 @@ In this example are two source data sets and two calculation functions.
 both data sources.
 
 ``` r
+
 fp <- madrat:::fingerprint("calcExample")
 #> hash components (d927f460):
 #>   741a3677 | calcExample | calcExample
@@ -228,6 +234,7 @@ differ also the resulting fingerprint for both calculations is
 different.
 
 ``` r
+
 readData <- function() return(99)
 fp <- madrat:::fingerprint("calcExample")
 #> hash components (1fd8c70c):
@@ -245,6 +252,7 @@ thereby also the fingerprints of both calc functions even so the hash of
 the calc functions itself did not change.
 
 ``` r
+
 readData2 <- function() {
   "!# @monitor madrat:::toolAggregate"
   return(99)
@@ -265,6 +273,7 @@ Adding a monitor control flag in `readData` also add this hash component
 to all subsequent fingerprint calculations.
 
 ``` r
+
 
 calcExample2 <- function() {
   "!# @ignore readData2"

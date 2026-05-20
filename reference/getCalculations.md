@@ -44,6 +44,10 @@ package origin.
 
 [`readSource`](readSource.md), [`setConfig`](setConfig.md)
 
+Other available functions: [`getLocation()`](getLocation.md),
+[`getSources()`](getSources.md),
+[`installedMadratUniverse()`](installedMadratUniverse.md)
+
 ## Author
 
 Jan Philipp Dietrich
@@ -51,6 +55,7 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 print(getCalculations())
 #>       type package                  call
 #> 1 TauTotal  madrat madrat:::calcTauTotal

@@ -139,6 +139,8 @@ mixed_aggregation to TRUE.
 
 [`calcOutput`](calcOutput.md)
 
+Other aggregation: [`pucAggregate()`](pucAggregate.md)
+
 ## Author
 
 Jan Philipp Dietrich, Ulrich Kreidenweis, Pascal Sauer
@@ -146,6 +148,7 @@ Jan Philipp Dietrich, Ulrich Kreidenweis, Pascal Sauer
 ## Examples
 
 ``` r
+
 # create example mapping
 p <- magclass::maxample("pop")
 mapping <- data.frame(from = magclass::getItems(p, dim = 1.1),

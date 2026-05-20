@@ -70,6 +70,13 @@ toolCountryFill(
 A MAgPIE object with spatial entries for each country of the official
 ISO code country list.
 
+## See also
+
+Other country tools: [`getISOlist()`](getISOlist.md),
+[`toolCountry2isocode()`](toolCountry2isocode.md),
+[`toolFillWithRegionAvg()`](toolFillWithRegionAvg.md),
+[`toolISOhistorical()`](toolISOhistorical.md)
+
 ## Author
 
 Jan Philipp Dietrich
@@ -77,6 +84,7 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 library(magclass)
 x <- new.magpie("DEU", 1994, "bla", 0)
 y <- toolCountryFill(x, 99)

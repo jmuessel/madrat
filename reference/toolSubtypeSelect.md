@@ -30,6 +30,8 @@ The file name corresponding to the given subtype
 
 [`readSource`](readSource.md)
 
+Other subtype handling: [`toolSplitSubtype()`](toolSplitSubtype.md)
+
 ## Author
 
 Jan Philipp Dietrich
@@ -37,6 +39,7 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 files <-  c(protection="protection.csv",
               production="production.csv",
               extent="forest_extent.csv")

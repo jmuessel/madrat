@@ -53,6 +53,10 @@ properly work.
 
 [`readSource`](readSource.md), [`setConfig`](setConfig.md)
 
+Other available functions: [`getCalculations()`](getCalculations.md),
+[`getLocation()`](getLocation.md),
+[`installedMadratUniverse()`](installedMadratUniverse.md)
+
 ## Author
 
 Jan Philipp Dietrich
@@ -60,6 +64,7 @@ Jan Philipp Dietrich
 ## Examples
 
 ``` r
+
 print(getSources())
 #>   source read correct convert download
 #> 1    Tau TRUE   FALSE    TRUE     TRUE
